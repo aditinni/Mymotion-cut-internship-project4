@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    background: white;
+}
+.gallery{
+    width: 80%;
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 30px;
+}
+
+.gallery img{
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.6s;
+
+
+
+}
+.gallery img:hover{
+    transform: scale(0.7) rotate(10deg);
+    transition: all 0.6s;
+    border-radius: 10px;
+    box-shadow: 10px 10px 200px black;
+}
+
+.view-large{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    margin: 10px;
+}
+.view-large img{
+    width: 80%;
+    max-width: 500px;
+    height: 80%;
+
+}
+.view-large span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+button{
+    width: 100px;
+    border-radius: 50px;
+}
+#previous{
+    padding: 10px;
+    border: transparent;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+#next{
+    padding: 10px;
+    border: transparent;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 91%;
+    gap: 20px;
+
+}

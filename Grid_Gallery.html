@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Grid Gallery</title>
+</head>
+<body>
+    <div class="view-large" id="viewfull">
+        <img src="img1.jpg" alt="not able to load" id="displaying">
+        <span onclick="closeimg()">X</span>
+      
+        <div class="flex">
+            <button onclick="prevImage()" id="previous">Previous</button>
+            <button onclick="nextImage()" id="next">Next</button>
+        </div>
+       
+    </div>
+    <h1>Nature Gallery</h1>
+    <div class="gallery">
+        <img src="img1.jpg" alt="not able to load" onclick="viewimage(this.src)" >
+        <img src="img2.jpg" alt="not able to load" onclick="viewimage(this.src)">
+        <img src="img3.jpg" alt="not able to load" onclick="viewimage(this.src)">
+        <img src="img4.jpg" alt="not able to load" onclick="viewimage(this.src)">
+        <img src="img5.jpg" alt="not able to load" onclick="viewimage(this.src)">
+        <img src="img6.jpg" alt="not able to load" onclick="viewimage(this.src)">
+        <img src="img7.jpg" alt="not able to load" onclick="viewimage(this.src)">
+        <img src="img8.jpg" alt="not able to load" onclick="viewimage(this.src)">
+        <img src="img9.jpg" alt="not able to load" onclick="viewimage(this.src)">
+        <img src="img10.jpg" alt="not able to load" onclick="viewimage(this.src)">
+        <img src="img11.jpg" alt="not able to load" onclick="viewimage(this.src)">
+        <img src="img12.jpg" alt="not able to load" onclick="viewimage(this.src)">
+    </div>
+    
+    <script>
+        let imgbox = document.getElementById("viewfull");
+        let imgshown = document.getElementById("displaying");
+        let currentIndex = 0;
+        let images = document.querySelectorAll('.gallery img');
+
+        function viewimage(source) {
+            viewfull.style.display = "flex";
+            imgshown.src = source;
+            currentIndex = Array.from(images).findIndex(img => img.src === source);
+        }
+
+        function closeimg() {
+            imgbox.style.display = "none";
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            imgshown.src = images[currentIndex].src;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            imgshown.src = images[currentIndex].src;
+        }
+    </script>
+</body>
+</html>
